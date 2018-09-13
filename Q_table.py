@@ -10,12 +10,12 @@ class Q_table():
         self.discount_rate = 0.1    # Should this gradually drop?
 
 
-    def lookup(self, *index, action=None):
-        real_index = self.state_to_index(index)
+    def lookup(self, state, action=None):
+        index = self.state_to_index(state)
         if action:
-            return self.q_table[real_index][self.get_action_index(action)]
+            return self.q_table[index][self.get_action_index(action)]
         else:
-            return self.q_table[real_index]
+            return self.q_table[index]
 
     def state_to_index(self, *state):
         temp = 0

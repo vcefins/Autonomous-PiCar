@@ -35,22 +35,10 @@ motor_speed = 70   # Speed Setup
 
 
 def main():
-    
-    angle = 86.9
-    
-    servo_install(90)
-    
-    while True:
-    
-        action_an(angle, fw, bw, motor_speed)
 
-
-    
-    """octasonic = Octasonic(0)
+    octasonic = Octasonic(0)
     octasonic.set_sensor_count(8)
-    
-    crash = False
-    
+
     action_list = ['forward', 'left', 'right', 'forward', 'left', 'forward']
     
     
@@ -61,16 +49,13 @@ def main():
     sleep(1)
     
     for act in reversed(action_list):
-        action(act, fw, bw, motor_speed, True)"""
+        action(act, fw, bw, motor_speed, True)
 
     
     bw.stop()
     #action("forward", fw, bw, motor_speed)
 
 
-
-
-    
 
 def simple_logic_machine_follows_least_obstructed_path(octasonic, fw, bw, motor_speed):
 
