@@ -54,7 +54,7 @@ def servo_install(angle):
     
 def action_an(action, fw, bw, speed, reverse=None):
 
-    angles = {"forward": 86.86, "right": 106.86, "left": 66.86}
+    angles = {"left": 66.86, "forward": 86.86, "right": 106.86}
 
     angle = angles.get(action)
 
@@ -67,3 +67,8 @@ def action_an(action, fw, bw, speed, reverse=None):
         fw.turn(angle)
         bw.speed = speed
         bw_position()   # Because the motor is working in reverse for an unknown reason
+
+
+def recovery(crash_report, fw, bw, speed):
+    for act in crash_report:
+        action_an(act, fw, bw, speed, True)

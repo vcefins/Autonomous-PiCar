@@ -17,7 +17,7 @@ front_wheels_enable = True
 rear_wheels_enable = True
 
 
-# Front and Backwheel classes assigned
+# Front and Back wheel classes instantiated
 bw = back_wheels.Back_Wheels()
 fw = front_wheels.Front_Wheels()
 picar.setup()
