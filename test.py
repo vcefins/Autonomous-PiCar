@@ -74,6 +74,8 @@ def main():
 
 def simple_logic_machine_follows_least_obstructed_path(octasonic, fw, bw, motor_speed):
 
+    crash = False
+
     while not crash:
         state_current = get_state(octasonic)
         temp = 0

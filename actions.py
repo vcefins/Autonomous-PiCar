@@ -12,7 +12,7 @@ from time import time
 optimal_pace = 50
 
         
-def action(action, fw, bw, speed, reverse = None):
+def action(action, fw, bw, speed, reverse=None):
     
     fw_possible_actions = {'forward': fw.turn_straight, 'backward': fw.turn_straight, 'left': fw.turn_left, 'right': fw.turn_right}
     fw_position = fw_possible_actions.get(action)
@@ -52,14 +52,16 @@ def servo_install(angle):
     print "Servo set to ", angle, " degrees.\n"
     
     
-def action_an(angle, fw, bw, speed, reverse = None):
-            
+def action_an(action, fw, bw, speed, reverse=None):
+
+    angles = {"forward": 86.86, "right": 106.86, "left": 66.86}
+
+    angle = angles.get(action)
+
     if reverse:
         bw_position = bw.forward
     else:
         bw_position = bw.backward
-
-    print action
         
     for i in range(optimal_pace):
         fw.turn(angle)
