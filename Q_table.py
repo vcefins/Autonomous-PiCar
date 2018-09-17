@@ -14,7 +14,7 @@ class Q_table():
     def lookup(self, state, action=None):
         index = self.state_to_index(state)
         if action:
-            return self.q_table[index][self.get_action_index(action)]
+            return self.q_table[index][action]
         else:
             return self.q_table[index]
 
@@ -30,8 +30,8 @@ class Q_table():
         return temp
 
     # Every action has an index to correspond the columns in the q_table.
-    def get_action_index(self, action):
-        actionDict = {"left": 0, "forward": 1, "right": 2}
+    def get_action_name(self, action):
+        actionDict = {0: "left", 1: "forward", 2: "right"}
         return actionDict.get(action)
 
     # This is the function that applies the Q-function for "learning".
@@ -43,11 +43,11 @@ class Q_table():
         new_value = max(self.lookup(sa_tuple.next_state))*self.discount_rate   # For highest value action in next state
         new_value = sa_tuple.reward + new_value - self.lookup(sa_tuple.state, sa_tuple.action)
 
-        self.q_table[index][self.get_action_index(sa_tuple.action)] += self.learning_rate*new_value
+        self.q_table[index][sa_tuple.action] += self.learning_rate*new_value
 
     def get_best_action(self, state):
         index = self.state_to_index(state)
         best_action = self.q_table[index]
 
     def get_random_action(self):
-        return self.get_action_index(randint(0, 2))
+        return randint(0, 2)

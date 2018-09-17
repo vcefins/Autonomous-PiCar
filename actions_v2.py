@@ -10,13 +10,14 @@ from time import time
 
 
 optimal_pace = 40
+speed = 45
 
-        
-def action(action, fw, bw, speed, reverse=None):
+
+def action(action_in, fw, bw, reverse=None):
     
-    fw_possible_actions = {'forward': fw.turn_straight, 'backward': fw.turn_straight, 'left': fw.turn_left, 'right': fw.turn_right}
-    fw_position = fw_possible_actions.get(action)
-        
+    fw_possible_actions = {'0': fw.turn_right, '1': fw.turn_straight, '2': fw.turn_left}
+    fw_position = fw_possible_actions.get(action_in)
+
     bw_position = bw.backward
 
     if reverse and not action == 'backward':
@@ -36,7 +37,7 @@ def get_state(octasonic):
     distance1 = octasonic.get_sensor_reading(2)   # faced front
     distance2 = octasonic.get_sensor_reading(1)   # faced right
     distance0 = octasonic.get_sensor_reading(7)   # faced left
-    #distance3 = octasonic.get_sensor_reading(0)   # faced backward
+    # distance3 = octasonic.get_sensor_reading(0)   # faced backward
     
     return distance0, distance1, distance2#, distance3
 
@@ -49,14 +50,14 @@ def servo_install(angle):
     servo1.write(angle)
     servo2.write(angle)
     
-    print "Servo set to ", angle, " degrees.\n"
+    print "Servo set to", angle, "degrees.\n"
     
     
-def action_an(action, fw, bw, speed, reverse=False):
+def action_an(action_in, fw, bw, reverse=False):
     
-    angles = {"left": 61.86, "forward": 86.86, "right": 111.86}
+    angles = {0: 61.86, 1: 86.86, 2: 111.86}
 
-    angle = angles.get(action)
+    angle = angles.get(action_in)
 
     if reverse:
         bw_position = bw.forward
@@ -70,7 +71,7 @@ def action_an(action, fw, bw, speed, reverse=False):
         bw_position()   # Because the motor is working in reverse for an unknown reason
 
 
-def recovery(crash_report, fw, bw, speed):
+def recovery(crash_report, fw, bw):
     print "\nRecovery mode reached. Actions to be taken: ", crash_report
     for act in reversed(crash_report):
-        action_an(act, fw, bw, speed, True)
+        action_an(act, fw, bw, True)
