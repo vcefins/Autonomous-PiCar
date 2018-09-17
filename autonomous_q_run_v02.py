@@ -11,10 +11,9 @@ import os
 from collections import namedtuple
 
 from Q_table import Q_table
-from actions import action
-from actions import get_state
-from actions import action_an
-from actions import recovery
+from actions_v2 import get_state
+from actions_v2 import action_an
+from actions_v2 import recovery
 
 
 # Front and Back wheel classes instantiated
