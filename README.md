@@ -6,4 +6,6 @@ Hi there.
 I don't know how you found me, but I'm Viktor Cef İnselberg and this is my Senior Design Project (Senior thesis) for my Computer Engineering BSc degree in MEF University. I have built myself a model car with ultrasonic sensors, based on the mini-computer Raspberry Pi 3.
 
 
-I will be attempting in observing the learning capabilities of the car that I have built, and go through numerous AI models to determine one with satisfactory outcome.
+
+
+I will be attempting in observing the learning capabilities of the car that I've built, and go through numerous AI models to determine one with satisfactory outcome.
