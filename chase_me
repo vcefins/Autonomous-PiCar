@@ -1,0 +1,44 @@
+def go_forward():
+    pass
+
+
+def turn_left():
+    pass
+
+
+def turn_right():
+    pass
+
+
+def get_sensor():
+    return []
+
+
+def select_focus(state):
+    min_v = min(state)
+    return state.index(min_v), min_v
+
+
+def main(dist):
+    state = get_sensor()
+    focus, f_val = select_focus(state)
+
+    if f_val < dist:
+        if focus == 0:
+            turn_left()
+        elif focus == 1:
+            go_forward()
+        elif focus == 2:
+            turn_right()
+        else:
+            print "Invalid focus."
+
+
+if __name__ == "__main__":
+    stay_distance = 10
+
+    try:
+        while True:
+            main(stay_distance)
+    except KeyboardInterrupt:
+        print "Goodbye."
