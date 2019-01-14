@@ -1,11 +1,9 @@
 # Autonomous-PiCar
-Takes on autonomous algorithms (e.g Q-learning, NN) with Raspberry Pi 3 and SunFounder PiCar-V as a body.
+A Raspberry Pi 3 with SunFounder PiCar-V as a body and numerous ultrasonic sensors to fully build a model autonomous car from the ground up.
 
 Hi there.
 
-I don't know how you found me, but I'm Viktor Cef İnselberg and this is my Senior Design Project (Senior thesis) for my Computer Engineering BSc degree in MEF University. I have built myself a model car with ultrasonic sensors, based on the mini-computer Raspberry Pi 3.
+I'm Viktor Cef Inselberg and this is my Senior Design Project (Senior thesis) for my Computer Engineering BSc degree in MEF University. I have built myself a model car for my senior thesis, and it turned out pretty fine.
 
 
-
-
-I will be attempting in observing the learning capabilities of the car that I've built, and go through numerous AI models to determine one with satisfactory outcome.
+I will be attempting to observe the learning capabilities of the car that I've built, and develop a Q-Learning AI model to achieve a model car that can learn to drive itself.
