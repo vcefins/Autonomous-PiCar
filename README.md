@@ -1,7 +1,7 @@
 # Autonomous-PiCar
 A Raspberry Pi 3 with SunFounder PiCar-V as a body and numerous ultrasonic sensors to build a model autonomous car from scratch.
 
-Hi there.
+###Hi there.
 
 I'm Viktor Cef Inselberg and this is my Senior Design Project (Senior thesis) for my Computer Engineering BSc degree in MEF University. Firstly, I have designed a model car hardware that is capable of:
 
